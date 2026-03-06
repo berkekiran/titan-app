@@ -1,0 +1,7 @@
+services:
+  titan-app:
+    image: titan-app:latest
+    container_name: titan-app
+    ports:
+      - "3005:3000"
+    restart: unless-stopped
