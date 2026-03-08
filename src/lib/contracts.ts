@@ -509,6 +509,7 @@ export const GOVERNANCE_ABI = [
     outputs: [
       { name: "id", type: "uint256" },
       { name: "proposer", type: "address" },
+      { name: "description", type: "string" },
       { name: "voteStart", type: "uint256" },
       { name: "voteEnd", type: "uint256" },
       { name: "snapshotBlock", type: "uint256" },
