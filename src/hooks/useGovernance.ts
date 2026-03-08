@@ -205,16 +205,16 @@ export function useGovernance() {
             }),
           ]);
 
-          // proposalData: [id, proposer, voteStart, voteEnd, snapshotBlock, forVotes, againstVotes, abstainVotes, canceled, executed, eta]
-          const proposal = proposalData as [bigint, `0x${string}`, bigint, bigint, bigint, bigint, bigint, bigint, boolean, boolean, bigint];
+          // proposalData: [id, proposer, description, voteStart, voteEnd, snapshotBlock, forVotes, againstVotes, abstainVotes, canceled, executed, eta]
+          const proposal = proposalData as [bigint, `0x${string}`, string, bigint, bigint, bigint, bigint, bigint, bigint, boolean, boolean, bigint];
           // proposalDetails: [targets, values, calldatas, description]
           const details = proposalDetails as [string[], bigint[], string[], string];
           const state = stateData as number;
           const votes = votesData as [bigint, bigint, bigint];
 
-          const description = details[3];
-          const voteStartBlock = Number(proposal[2]);
-          const voteEndBlock = Number(proposal[3]);
+          const description = proposal[2] || details[3]; // Prefer from proposals(), fallback to getProposal()
+          const voteStartBlock = Number(proposal[3]);
+          const voteEndBlock = Number(proposal[4]);
 
           // Get actual timestamps from blocks
           let startTime = 0;
@@ -255,8 +255,8 @@ export function useGovernance() {
             voteEnd: voteEndBlock,
             startTime,
             endTime,
-            executed: proposal[9],
-            canceled: proposal[8],
+            executed: proposal[10],
+            canceled: proposal[9],
             status: mapStateToStatus(state),
           });
         } catch (err) {
