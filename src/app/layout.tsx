@@ -38,9 +38,9 @@ export const metadata: Metadata = {
     "web3",
     "decentralized finance",
   ],
-  authors: [{ name: "Berke", url: "https://pzza.works" }],
-  creator: "Berke",
-  publisher: "Berke",
+  authors: [{ name: "Berke (pzzaworks)", url: "https://pzza.works" }],
+  creator: "Berke (pzzaworks)",
+  publisher: "Berke (pzzaworks)",
   robots: {
     index: true,
     follow: true,
