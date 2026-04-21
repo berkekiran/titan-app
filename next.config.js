@@ -2,6 +2,10 @@
 const nextConfig = {
   output: 'standalone',
   reactStrictMode: true,
+  outputFileTracingRoot: __dirname,
+  turbopack: {
+    root: __dirname,
+  },
   images: {
     remotePatterns: [
       {

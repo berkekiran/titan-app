@@ -96,18 +96,7 @@ export function Footer() {
               y={34}
             >
               <p>Swap, stake, borrow, add liquidity, and vote.</p>
-              <p>
-                Built by{" "}
-                <a
-                  href="https://pzza.works"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-white/84 transition-colors hover:text-white"
-                >
-                  Berke
-                </a>
-                .
-              </p>
+              <p>© 2026 {config.appName}. All rights reserved.</p>
             </Reveal>
           </div>
         </div>
